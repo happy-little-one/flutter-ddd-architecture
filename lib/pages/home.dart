@@ -22,8 +22,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-
-  dispose() {
-    controller.dispose();
-  }
 }
