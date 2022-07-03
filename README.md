@@ -4,9 +4,9 @@ every sub-domain has three layer: adapters, apps, models.
 
 - models layer is composed of entities and value objects, this is the place where you put domain logics only, it should be isolated form specific technologies.
 - apps layer is composed of use cases, it should express the business use case completely. most of the time, it read data from the in-direction adapters(such as backend api), and write data to the out-direction adapters(such as client store), to accomplish one specific use case.
-- adapters layer is responsible for side effects,such as io.
+- adapters layer is responsible for side effects, it's implelemented by specific technologies, such as `http`, `getX`.
 
-this is what a regular use case function looks like(in apps layer):
+this is what a regular use case function looks like in apps layer :
 
 ```
 void useCaseName() {
@@ -18,7 +18,7 @@ void useCaseName() {
 
 ## ui
 
-ui just performed as consumer of data from store and user case functions from apps, quiet simple.
+ui just performs as consumer of data from store and user case functions from apps, quiet simple.
 
 ```
 Wdiget(
@@ -44,4 +44,4 @@ lib
 
 I use getx as the client store. but only treated it as frontend reactive database, haven't use it's controllers. this is what I recommend, keep store simple, write logics in apps layer.
 
-look into the codes, every solution is the simplest, If you have simpler one, be sure to tell me, thanks!
+look into the codes, every solution is the simplest, If you have simpler ones, be sure to tell me, thanks!
